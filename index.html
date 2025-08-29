@@ -4,33 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aryan Kumar Rai - Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-        .glassmorphism {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .social-icon {
-            transition: transform 0.3s ease;
-        }
-        .social-icon:hover {
-            transform: scale(1.1);
-        }
-        .logo {
-            --logo-color: #FFFFFF;
-            --accent-color: #a78bfa; /* Updated accent color */
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-900 text-gray-200">
+
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
     <!-- Header -->
     <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
@@ -55,7 +41,7 @@
         </div>
     </header>
 
-    <main class="container mx-auto px-6 py-12">
+    <main class="container mx-auto px-6 py-12 relative z-10">
 
         <!-- Hero Section -->
         <section id="home" class="min-h-[80vh] flex flex-col md:flex-row items-center justify-center text-center md:text-left">
@@ -78,9 +64,12 @@
                     </a>
                 </div>
             </div>
-             <div class="md:w-1/2 flex justify-center">
-                <!-- Profile Picture -->
-                 <img src="https://media.licdn.com/dms/image/v2/D4E03AQFl2RPQ3EWhPg/profile-displayphoto-shrink_400_400/B4EZXxzFoKGYAg-/0/1743518478104?e=1759363200&v=beta&t=zNLG3S3oEq7czobm2VUm6BKMjxp6wqh5Le63hhycTLU" alt="Aryan Kumar Rai" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-2xl shadow-cyan-500/20">
+             <div class="md:w-1/2 flex justify-center items-center">
+                <!-- Profile Picture Container -->
+                 <div class="profile-image-container">
+                    <img src="https://media.licdn.com/dms/image/v2/D4E03AQFl2RPQ3EWhPg/profile-displayphoto-shrink_400_400/B4EZXxzFoKGYAg-/0/1743518478104?e=1759363200&v=beta&t=zNLG3S3oEq7czobm2VUm6BKMjxp6wqh5Le63hhycTLU" alt="Aryan Kumar Rai" class="w-full h-full rounded-full object-cover shadow-2xl shadow-cyan-500/20">
+                    <canvas id="image-border-canvas"></canvas>
+                 </div>
             </div>
         </section>
 
@@ -101,7 +90,6 @@
                 </div>
                 <div class="md:w-1/3 p-6 glassmorphism rounded-xl">
                      <h3 class="text-xl font-semibold mb-4 text-white">Coding Stats</h3>
-                     <!-- LeetCode stats updated here -->
                      <div class="space-y-3">
                          <div class="flex justify-between items-center">
                              <span class="font-medium">Total Solved</span>
@@ -133,43 +121,15 @@
         <section id="skills" class="py-20">
             <h2 class="text-3xl font-bold text-center mb-12">My Tech Stack</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 text-center">
-                <!-- Skill items -->
-                <div class="skill-item p-4 glassmorphism rounded-lg hover:bg-gray-800/50 transition-all transform hover:-translate-y-1">
-                    <i class="fab fa-react text-5xl text-cyan-400 mb-2"></i>
-                    <p>React</p>
-                </div>
-                <div class="skill-item p-4 glassmorphism rounded-lg hover:bg-gray-800/50 transition-all transform hover:-translate-y-1">
-                    <i class="fab fa-node-js text-5xl text-green-500 mb-2"></i>
-                    <p>Node.js</p>
-                </div>
-                 <div class="skill-item p-4 glassmorphism rounded-lg hover:bg-gray-800/50 transition-all transform hover:-translate-y-1">
-                    <i class="fab fa-js-square text-5xl text-yellow-400 mb-2"></i>
-                    <p>JavaScript</p>
-                </div>
-                <div class="skill-item p-4 glassmorphism rounded-lg hover:bg-gray-800/50 transition-all transform hover:-translate-y-1">
-                    <i class="fab fa-html5 text-5xl text-orange-500 mb-2"></i>
-                    <p>HTML5</p>
-                </div>
-                <div class="skill-item p-4 glassmorphism rounded-lg hover:bg-gray-800/50 transition-all transform hover:-translate-y-1">
-                    <i class="fab fa-css3-alt text-5xl text-blue-500 mb-2"></i>
-                    <p>CSS3</p>
-                </div>
-                 <div class="skill-item p-4 glassmorphism rounded-lg hover:bg-gray-800/50 transition-all transform hover:-translate-y-1">
-                    <i class="fab fa-git-alt text-5xl text-orange-600 mb-2"></i>
-                    <p>Git</p>
-                </div>
-                 <div class="skill-item p-4 glassmorphism rounded-lg hover:bg-gray-800/50 transition-all transform hover:-translate-y-1">
-                    <i class="fab fa-docker text-5xl text-blue-400 mb-2"></i>
-                    <p>Docker</p>
-                </div>
-                 <div class="skill-item p-4 glassmorphism rounded-lg hover:bg-gray-800/50 transition-all transform hover:-translate-y-1">
-                    <i class="fas fa-c text-5xl text-blue-600 mb-2"></i>
-                    <p>C++</p>
-                </div>
-                <div class="skill-item p-4 glassmorphism rounded-lg hover:bg-gray-800/50 transition-all transform hover:-translate-y-1">
-                    <i class="fab fa-python text-5xl text-yellow-500 mb-2"></i>
-                    <p>Python</p>
-                </div>
+                <div class="skill-item p-4 glassmorphism rounded-lg hover:bg-gray-800/50 transition-all transform hover:-translate-y-1"><i class="fab fa-react text-5xl text-cyan-400 mb-2"></i><p>React</p></div>
+                <div class="skill-item p-4 glassmorphism rounded-lg hover:bg-gray-800/50 transition-all transform hover:-translate-y-1"><i class="fab fa-node-js text-5xl text-green-500 mb-2"></i><p>Node.js</p></div>
+                <div class="skill-item p-4 glassmorphism rounded-lg hover:bg-gray-800/50 transition-all transform hover:-translate-y-1"><i class="fab fa-js-square text-5xl text-yellow-400 mb-2"></i><p>JavaScript</p></div>
+                <div class="skill-item p-4 glassmorphism rounded-lg hover:bg-gray-800/50 transition-all transform hover:-translate-y-1"><i class="fab fa-html5 text-5xl text-orange-500 mb-2"></i><p>HTML5</p></div>
+                <div class="skill-item p-4 glassmorphism rounded-lg hover:bg-gray-800/50 transition-all transform hover:-translate-y-1"><i class="fab fa-css3-alt text-5xl text-blue-500 mb-2"></i><p>CSS3</p></div>
+                <div class="skill-item p-4 glassmorphism rounded-lg hover:bg-gray-800/50 transition-all transform hover:-translate-y-1"><i class="fab fa-git-alt text-5xl text-orange-600 mb-2"></i><p>Git</p></div>
+                <div class="skill-item p-4 glassmorphism rounded-lg hover:bg-gray-800/50 transition-all transform hover:-translate-y-1"><i class="fab fa-docker text-5xl text-blue-400 mb-2"></i><p>Docker</p></div>
+                <div class="skill-item p-4 glassmorphism rounded-lg hover:bg-gray-800/50 transition-all transform hover:-translate-y-1"><i class="fas fa-c text-5xl text-blue-600 mb-2"></i><p>C++</p></div>
+                <div class="skill-item p-4 glassmorphism rounded-lg hover:bg-gray-800/50 transition-all transform hover:-translate-y-1"><i class="fab fa-python text-5xl text-yellow-500 mb-2"></i><p>Python</p></div>
             </div>
         </section>
 
@@ -177,7 +137,6 @@
         <section id="projects" class="py-20">
             <h2 class="text-3xl font-bold text-center mb-12">Featured Project</h2>
             <div class="flex justify-center">
-                <!-- Project Card -->
                 <div class="bg-gray-800/50 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 max-w-sm">
                     <div class="w-full h-48 bg-gray-900/50 flex items-center justify-center">
                         <svg class="logo" width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -234,26 +193,7 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when a link is clicked
-        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
-        for (let link of mobileMenuLinks) {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        }
-
-        // Set current year in footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
