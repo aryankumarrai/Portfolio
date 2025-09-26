@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aryan Kumar Rai - Portfolio</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/6361/6361475.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,9 +22,12 @@
     <!-- Header -->
     <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-white">Aryan Kumar Rai</a>
+            <a href="#home" class="text-2xl font-bold text-white">Aryan Kumar Rai</a>
             <nav class="hidden md:flex space-x-6 items-center">
                 <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
+                <a href="#education" class="hover:text-cyan-400 transition-colors">Education</a>
+                <a href="#achievements" class="hover:text-cyan-400 transition-colors">Achievements</a>
                 <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
                 <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
                 <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
@@ -35,6 +39,9 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
             <a href="#about" class="block py-2 text-lg hover:text-cyan-400 transition-colors">About</a>
+            <a href="#experience" class="block py-2 text-lg hover:text-cyan-400 transition-colors">Experience</a>
+            <a href="#education" class="block py-2 text-lg hover:text-cyan-400 transition-colors">Education</a>
+            <a href="#achievements" class="block py-2 text-lg hover:text-cyan-400 transition-colors">Achievements</a>
             <a href="#skills" class="block py-2 text-lg hover:text-cyan-400 transition-colors">Skills</a>
             <a href="#projects" class="block py-2 text-lg hover:text-cyan-400 transition-colors">Projects</a>
             <a href="#contact" class="block py-2 text-lg hover:text-cyan-400 transition-colors">Contact</a>
@@ -58,8 +65,11 @@
                     <a href="https://leetcode.com/u/aryankumarrai/" target="_blank" class="text-gray-300 hover:text-cyan-400 transition-colors">
                         <img src="https://cdn.iconscout.com/icon/free/png-256/free-leetcode-logo-icon-svg-png-download-2944960.png" alt="LeetCode" class="w-8 h-8 social-icon">
                     </a>
+                     <a href="https://codeforces.com/profile/aryankumarrai" target="_blank" class="text-gray-300 hover:text-cyan-400 transition-colors">
+                        <img src="https://codeforces.org/s/50247/apple-icon-60x60.png" alt="Codeforces" class="w-8 h-8 social-icon rounded-md">
+                    </a>
                     <a href="https://www.linkedin.com/in/aryankumarrai" target="_blank" class="text-gray-300 hover:text-cyan-400 transition-colors text-3xl social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" target="_blank" class="text-gray-300 hover:text-cyan-400 transition-colors">
+                    <a href="https://x.com/aryan_islost" target="_blank" class="text-gray-300 hover:text-cyan-400 transition-colors">
                          <img src="https://static.dezeen.com/uploads/2023/07/x-logo-twitter-elon-musk_dezeen_2364_col_0.jpg" alt="X Logo" class="w-8 h-8 social-icon rounded-md">
                     </a>
                 </div>
@@ -67,8 +77,7 @@
              <div class="md:w-1/2 flex justify-center items-center">
                 <!-- Profile Picture Container -->
                  <div class="profile-image-container">
-                    <img src="https://media.licdn.com/dms/image/v2/D4E03AQFl2RPQ3EWhPg/profile-displayphoto-shrink_400_400/B4EZXxzFoKGYAg-/0/1743518478104?e=1759363200&v=beta&t=zNLG3S3oEq7czobm2VUm6BKMjxp6wqh5Le63hhycTLU" alt="Aryan Kumar Rai" class="w-full h-full rounded-full object-cover shadow-2xl shadow-cyan-500/20">
-                    <canvas id="image-border-canvas"></canvas>
+                    <img src="https://media.licdn.com/dms/image/v2/D4E03AQFl2RPQ3EWhPg/profile-displayphoto-shrink_400_400/B4EZXxzFoKGYAg-/0/1743518478104?e=1759363200&v=beta&t=zNLG3S3oEq7czobm2VUm6BKMjxp6wqh5Le63hhycTLU" alt="Aryan Kumar Rai" class="w-full h-full rounded-full object-cover">
                  </div>
             </div>
         </section>
@@ -90,32 +99,121 @@
                 </div>
                 <div class="md:w-1/3 p-6 glassmorphism rounded-xl">
                      <h3 class="text-xl font-semibold mb-4 text-white">Coding Stats</h3>
-                     <div class="space-y-3">
+                     <div id="leetcode-stats-container" class="space-y-3">
                          <div class="flex justify-between items-center">
-                             <span class="font-medium">Total Solved</span>
-                             <span class="text-cyan-400 font-bold text-lg">26</span>
+                             <span class="font-medium">Total Solved (LeetCode)</span>
+                             <span id="total-solved" class="text-cyan-400 font-bold text-lg">...</span>
                          </div>
                          <div class="flex justify-between items-center">
                              <span class="font-medium text-green-400">Easy</span>
-                             <span class="text-gray-300 font-semibold">17 / 892</span>
+                             <span id="easy-solved" class="text-gray-300 font-semibold">...</span>
                          </div>
                          <div class="flex justify-between items-center">
                              <span class="font-medium text-yellow-400">Medium</span>
-                             <span class="text-gray-300 font-semibold">9 / 1907</span>
+                             <span id="medium-solved" class="text-gray-300 font-semibold">...</span>
                          </div>
                          <div class="flex justify-between items-center">
                              <span class="font-medium text-red-400">Hard</span>
-                             <span class="text-gray-300 font-semibold">0 / 863</span>
+                             <span id="hard-solved" class="text-gray-300 font-semibold">...</span>
                          </div>
-                         <div class="mt-4">
-                            <a href="https://leetcode.com/u/aryankumarrai/" target="_blank" class="inline-block w-full text-center bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
-                                View Profile
-                            </a>
+                         <hr class="border-gray-600 my-3">
+                         <div class="flex justify-between items-center">
+                             <span class="font-medium">Total Solved (Codeforces)</span>
+                             <span id="codeforces-solved" class="text-cyan-400 font-bold text-lg">...</span>
                          </div>
                      </div>
                 </div>
             </div>
         </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20">
+            <h2 class="text-3xl font-bold text-center mb-20">Experience</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="relative timeline-item pb-8">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glassmorphism rounded-lg p-6">
+                        <span class="font-bold text-cyan-400 text-sm tracking-wide">Aug 2025 - Present</span>
+                        <h3 class="text-xl font-bold pt-1">Core Team</h3>
+                        <p class="text-gray-400 text-sm">iCreate vitb</p>
+                         <p class="pt-2">Technical Support</p>
+                    </div>
+                </div>
+                 <div class="relative timeline-item pb-8">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glassmorphism rounded-lg p-6">
+                        <span class="font-bold text-cyan-400 text-sm tracking-wide">Mar 2025 - Present</span>
+                        <h3 class="text-xl font-bold pt-1">Core Team</h3>
+                        <p class="text-gray-400 text-sm">ANTERIX Club VITB</p>
+                        <p class="pt-2">Event Planning, Event Management</p>
+                    </div>
+                </div>
+                 <div class="relative timeline-item pb-8">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glassmorphism rounded-lg p-6">
+                        <span class="font-bold text-cyan-400 text-sm tracking-wide">Jul 2025 - Present</span>
+                        <h3 class="text-xl font-bold pt-1">Core Team</h3>
+                        <p class="text-gray-400 text-sm">Cooking & Feasting Club - VIT Bhopal University</p>
+                        <p class="pt-2">Event Planning, Event Management</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+       <section id="education" class="py-20">
+            <h2 class="text-3xl font-bold text-center mb-20">Education</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="relative timeline-item pb-8">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glassmorphism rounded-lg p-6">
+                        <span class="font-bold text-cyan-400 text-sm tracking-wide">2024 - 2028</span>
+                        <h3 class="text-xl font-bold pt-1">
+                            <a href="https://www.google.com/maps/place/VIT+Bhopal+University/@23.0774796,76.8513183,17z/data=!3m1!4b1!4m6!3m5!1s0x397ce9ceaaaaaaab:0xa224b6b82b421f83!8m2!3d23.0774796!4d76.8513183!16s%2Fg%2F11hbgkdndx?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="hover:text-white transition-colors">VIT Bhopal University</a>
+                        </h3>
+                        <p class="text-gray-400 text-sm">Bachelor of Technology - BTech, Computer Science (Spec. In AI&ML)</p>
+                    </div>
+                </div>
+                 <div class="relative timeline-item pb-8">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glassmorphism rounded-lg p-6">
+                        <span class="font-bold text-cyan-400 text-sm tracking-wide">2022 - 2024</span>
+                         <h3 class="text-xl font-bold pt-1">
+                            <a href="https://www.google.com/maps/place/DAV+public+school/@21.8192711,84.0214315,17z/data=!3m1!4b1!4m6!3m5!1s0x3a20e3e0c05c4109:0x97605bd26ae22d11!8m2!3d21.8192711!4d84.0214315!16s%2Fg%2F1pyqjwrzr?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="hover:text-white transition-colors">DAV Public School, Jharsuguda, Odisha</a>
+                        </h3>
+                        <p class="text-gray-400 text-sm">CBSE Class 12, Science (PCM)</p>
+                        <p class="pt-2">Grade: 85.8%</p>
+                    </div>
+                </div>
+                 <div class="relative timeline-item pb-8">
+                    <div class="timeline-dot"></div>
+                     <div class="timeline-content glassmorphism rounded-lg p-6">
+                        <span class="font-bold text-cyan-400 text-sm tracking-wide">2015 - 2022</span>
+                         <h3 class="text-xl font-bold pt-1">
+                            <a href="https://www.google.com/maps/place/DAV+public+school/@21.8192711,84.0214315,17z/data=!3m1!4b1!4m6!3m5!1s0x3a20e3e0c05c4109:0x97605bd26ae22d11!8m2!3d21.8192711!4d84.0214315!16s%2Fg%2F1pyqjwrzr?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="hover:text-white transition-colors">DAV Public School, Jharsuguda, Odisha</a>
+                        </h3>
+                        <p class="text-gray-400 text-sm">CBSE Class 10</p>
+                        <p class="pt-2">Grade: 90.8%</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="py-20">
+            <h2 class="text-3xl font-bold text-center mb-20">Achievements</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="relative timeline-item pb-8">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glassmorphism rounded-lg p-6">
+                        <span class="font-bold text-cyan-400 text-sm tracking-wide">April 2025</span>
+                        <h3 class="text-xl font-bold pt-1">1st Runner up Summer of Codefest'25</h3>
+                        <p class="text-gray-400 text-sm">Hackathon organised by GSoC Innovatorsclub VIT Bhopal</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <!-- Skills Section -->
         <section id="skills" class="py-20">
@@ -184,8 +282,11 @@
                 <a href="https://leetcode.com/u/aryankumarrai/" target="_blank" class="text-gray-300 hover:text-cyan-400 transition-colors">
                     <img src="https://cdn.iconscout.com/icon/free/png-256/free-leetcode-logo-icon-svg-png-download-2944960.png" alt="LeetCode" class="w-5 h-5 social-icon">
                 </a>
+                 <a href="https://codeforces.com/profile/aryankumarrai" target="_blank" class="text-gray-300 hover:text-cyan-400 transition-colors">
+                    <img src="https://codeforces.org/s/50247/apple-icon-60x60.png" alt="Codeforces" class="w-5 h-5 social-icon rounded-md">
+                </a>
                 <a href="https://www.linkedin.com/in/aryankumarrai" target="_blank" class="hover:text-cyan-400 transition-colors text-xl social-icon"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank" class="text-gray-300 hover:text-cyan-400 transition-colors">
+                <a href="https://x.com/aryan_islost" target="_blank" class="text-gray-300 hover:text-cyan-400 transition-colors">
                     <img src="https://static.dezeen.com/uploads/2023/07/x-logo-twitter-elon-musk_dezeen_2364_col_0.jpg" alt="X Logo" class="w-5 h-5 social-icon rounded-sm">
                 </a>
             </div>
@@ -197,3 +298,4 @@
 
 </body>
 </html>
+
