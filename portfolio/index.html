@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aryan Kumar Rai — Backend Engineer</title>
+<meta name="description" content="Aryan Kumar Rai — backend engineer building reliable, async systems. FastAPI, PostgreSQL, AI-assisted development.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314171D'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' font-weight='600' fill='%23E3B23C' text-anchor='middle'%3EAK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grid-texture" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">AKR</a>
+    <nav class="nav" id="nav">
+      <a href="#about">~/about</a>
+      <a href="#work">~/work</a>
+      <a href="#projects">~/projects</a>
+      <a href="#stack">~/stack</a>
+      <a href="#contact">~/contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="status-pill">
+      <span class="dot"></span> available for internships — 2028 batch
+    </div>
+
+    <h1 class="hero-title">
+      Aryan Kumar Rai
+    </h1>
+    <p class="hero-role">Backend engineer, building systems that stay correct when things go wrong.</p>
+    <p class="hero-sub">
+      CS undergrad (AI &amp; ML) at VIT Bhopal. I write async APIs, design auth and data
+      schemas, and lean hard on AI tooling to move faster without cutting corners on
+      reliability, idempotency, and observability.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="mailto:aryansam1829@gmail.com">Email me</a>
+      <a class="btn btn-ghost" href="https://github.com/aryankumarrai" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/aryankumarrai" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="assets/AryanKumarRai_Resume.pdf" target="_blank" rel="noopener">Résumé ↓</a>
+    </div>
+
+    <!-- SIGNATURE PIPELINE DIAGRAM -->
+    <div class="pipeline" role="img" aria-label="Diagram of a lead-processing pipeline: ingest, classify, dedupe, deliver, with reliability stats at each stage.">
+      <div class="pipeline-track">
+        <span class="packet"></span>
+      </div>
+      <div class="pipeline-stages">
+        <div class="stage">
+          <span class="stage-index">req</span>
+          <span class="stage-name">Ingest</span>
+          <span class="stage-stat">&lt; 50ms task id</span>
+        </div>
+        <div class="stage">
+          <span class="stage-index">→</span>
+          <span class="stage-name">Classify</span>
+          <span class="stage-stat">AI + fallback</span>
+        </div>
+        <div class="stage">
+          <span class="stage-index">→</span>
+          <span class="stage-name">Dedupe</span>
+          <span class="stage-stat">0 duplicate rows</span>
+        </div>
+        <div class="stage">
+          <span class="stage-index">→</span>
+          <span class="stage-name">Deliver</span>
+          <span class="stage-stat">&lt; 3s end-to-end</span>
+        </div>
+      </div>
+      <p class="pipeline-caption">// how the lead-automation system actually moves a request, retry logic omitted for space</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section wrap">
+    <h2 class="section-title"><span class="eyebrow">~/about</span> Who's writing this</h2>
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="assets/profile.jpg" alt="Aryan Kumar Rai">
+      </div>
+      <div class="about-copy">
+        <p>
+          I'm a third-year CS student at VIT Bhopal, specializing in AI &amp; ML, currently
+          looking for my next internship. Most of what I build lives on the backend —
+          authentication schemes, async task queues, database schemas carved out of messy
+          real-world data — and I ship it faster by treating AI coding tools as a daily part
+          of the workflow, not a crutch I hide.
+        </p>
+        <p>
+          This spring I interned at JSW JFE Steel, taking a paper-based reporting process
+          used by seven departments and rebuilding it into a production web portal end to
+          end — auth, API, and schema design included. Outside of internships, I lead the
+          tech team at iCreate VITB, keep a daily LeetCode habit going in C++, and have
+          co-authored two published papers on systems I built from scratch.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="work" class="section wrap">
+    <h2 class="section-title"><span class="eyebrow">~/work</span> Experience</h2>
+    <div class="timeline">
+      <div class="entry">
+        <div class="entry-meta">
+          <span class="entry-date">May – Jul 2026</span>
+          <span class="entry-place">JSW JFE Steel Ltd., Sambalpur</span>
+        </div>
+        <div class="entry-body">
+          <h3>IT Department Intern</h3>
+          <ul>
+            <li>Owned an enterprise reporting system end to end — auth, backend API, and database layer — serving 7 departments, as part of a 3-person team, starting from paper-based requirements with no prior spec.</li>
+            <li>Designed a 4-factor auth scheme (JWT + bcrypt) with rate-limited endpoints and a full audit log, prioritizing traceability over shortcuts.</li>
+            <li>Modeled department-isolated relational schemas from unstructured daily report sheets, debugging live production issues including SQLAlchemy identity-map collisions.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">
+          <span class="entry-date">2024 – present</span>
+          <span class="entry-place">iCreate VITB</span>
+        </div>
+        <div class="entry-body">
+          <h3>Tech Team Lead</h3>
+          <ul>
+            <li>Maintain the club's technical infrastructure and automated event registration workflows used by 300+ participants — forms, QR-based entry passes, and a hybrid volunteer authentication system.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section wrap">
+    <h2 class="section-title"><span class="eyebrow">~/projects</span> Things I've built</h2>
+    <div class="card-grid">
+
+      <article class="card">
+        <h3>InstructIQ</h3>
+        <p>AI-powered academic assistant that automates faculty busywork — an AI phone agent that handles student follow-up calls, calendar sync across appointments and classes, automated email reminders and rescheduling, and an assignment-integrity checker that connects to Google Classroom to flag duplicate files, non-submitters, and AI-generated content. 1st Runner-Up, Summer of Codefest '25 (VIT Bhopal, organized by GSoC Innovators Club). The live site is currently down — the domain's first free year ran out.</p>
+        <div class="tags">
+          <span>Hackathon winner</span><span>Google Classroom API</span><span>AI content detection</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/aryankumarrai/Instructiq" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Lead Automation System</h3>
+        <p>Async, fault-tolerant lead-processing pipeline that classifies and enriches each lead end to end in under 3 seconds. Async endpoints return a task id in under 50ms, with 3-attempt auto-retry and idempotency checks that eliminate duplicate entries on webhook retries. Falls back to a keyword classifier if the AI API goes down.</p>
+        <div class="tags">
+          <span>Python</span><span>FastAPI</span><span>Celery</span><span>Redis</span><span>PostgreSQL</span><span>Gemini API</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/aryankumarrai/Lead-Automation-System" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://drive.google.com/file/d/1P2EhAt2KdkhKJZMQVUaX9uryMD7xisPX/view?usp=drivesdk" target="_blank" rel="noopener">Demo ↗</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Department-Wise Daily Report Portal</h3>
+        <p>A personal rebuild of the reporting-portal concept from my JSW internship — separate codebase, synthetic data, and its own UI, built solo to go deeper on the auth and schema design than the internship scope allowed. Rate-limited, audit-logged authentication with role-based access (Operator / Admin / Plant Admin / Developer) across 6 department-isolated schemas.</p>
+        <div class="tags">
+          <span>React</span><span>TypeScript</span><span>FastAPI</span><span>SQLAlchemy</span><span>JWT</span><span>bcrypt</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/aryankumarrai/Department-Wise-Daily-Report-Portal" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>PharmaKrypt</h3>
+        <p>Medicine authentication system using cryptographic QR serialization and geofenced verification, validating each pack in under 2 seconds. A one-scan consumption policy enforced via Firestore atomic transactions eliminates duplicate-scan counterfeits. Architecture written up and published in IJIRT.</p>
+        <div class="tags">
+          <span>React</span><span>Vite</span><span>Firebase</span><span>Tailwind</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/aryankumarrai/Pharmakrypt" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://www.pharmakrypt.app/" target="_blank" rel="noopener">Live ↗</a>
+          <a href="https://ijirt.org/article?manuscript=196615" target="_blank" rel="noopener">Paper ↗</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>RubricAI</h3>
+        <p>Automates grading and plagiarism analysis for Google Classroom assignments using Gemini for nuanced theory and code review, with student code run and tested in sandboxed Docker containers. Plagiarism detection goes past keyword matching — semantic similarity for theory answers, AST-normalized comparison for code so simple variable renaming doesn't slip through. Celery + Redis handle analysis in the background, and finished reports are emailed straight to students.</p>
+        <div class="tags">
+          <span>Flask</span><span>Celery</span><span>Docker</span><span>Gemini API</span><span>Google Classroom API</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/aryankumarrai/RubricAI" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://www.ijfmr.com/papers/2025/5/56763.pdf" target="_blank" rel="noopener">Paper ↗</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack" class="section wrap">
+    <h2 class="section-title"><span class="eyebrow">~/stack</span> Tools I reach for</h2>
+    <div class="stack-grid">
+      <div class="stack-group">
+        <h4>Languages</h4>
+        <div class="tags"><span>C++</span><span>Python</span><span>Java</span><span>SQL</span></div>
+      </div>
+      <div class="stack-group">
+        <h4>Backend &amp; systems</h4>
+        <div class="tags"><span>FastAPI</span><span>Flask</span><span>SQLAlchemy</span><span>JWT</span><span>Celery</span><span>Redis</span><span>Async I/O</span></div>
+      </div>
+      <div class="stack-group">
+        <h4>Databases</h4>
+        <div class="tags"><span>PostgreSQL</span><span>MS SQL Server</span><span>Firebase / Firestore</span></div>
+      </div>
+      <div class="stack-group">
+        <h4>Cloud &amp; tools</h4>
+        <div class="tags"><span>Docker</span><span>GCP</span><span>Git</span><span>GitHub Actions</span><span>Postman</span></div>
+      </div>
+      <div class="stack-group">
+        <h4>AI-assisted development</h4>
+        <div class="tags"><span>Claude</span><span>Gemini API</span><span>Prompt engineering</span><span>Daily driver, not a novelty</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="section wrap">
+    <h2 class="section-title"><span class="eyebrow">~/log</span> Achievements</h2>
+    <ul class="log-list">
+      <li><span class="log-tag">contest</span> 1st Runner-Up, Summer of Codefest '25 Hackathon — VIT Bhopal, for InstructIQ; finalist in the majority of 10+ hackathons since 2024.</li>
+      <li><span class="log-tag">paper</span> "PharmaKrypt: Agentic AI-Powered Framework for Secure and Intelligent Medicine Verification" — IJIRT, 2026.</li>
+      <li><span class="log-tag">paper</span> "RubricAI: AI-Driven Automated Assignment Evaluation" — IJFMR, 2025.</li>
+      <li><span class="log-tag">dsa</span> 134 problems solved on LeetCode, 41-day max streak — currently expanding past arrays and strings into trees, recursion, and DP.</li>
+      <li><span class="log-tag">lead</span> Tech Team Lead, iCreate VITB — infrastructure and registration automation for 300+ participants.</li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section wrap contact-section">
+    <h2 class="section-title"><span class="eyebrow">~/contact</span> Get in touch</h2>
+    <p class="contact-copy">
+      Open to SDE internships and interesting backend problems. The fastest way to reach me
+      is email — I check it far more often than anything else here.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="mailto:aryansam1829@gmail.com">aryansam1829@gmail.com</a>
+      <a class="btn btn-ghost" href="https://github.com/aryankumarrai" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/aryankumarrai" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://leetcode.com/u/aryankumarrai" target="_blank" rel="noopener">LeetCode</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Aryan Kumar Rai</span>
+    <span class="footer-note">built by hand, tuned with AI</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
