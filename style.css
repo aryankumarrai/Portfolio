@@ -307,6 +307,8 @@ h1,h2,h3,h4{
   transition:border-color .15s ease, transform .15s ease;
 }
 .card:hover{ border-color:var(--accent); transform:translateY(-3px); }
+.card:nth-child(5):last-child{ grid-column:1 / -1; }
+.card:nth-child(5):last-child p{ max-width:70ch; }
 .card h3{ font-size:1.15rem; margin-bottom:10px; }
 .card p{ color:var(--muted); font-size:0.94rem; flex-grow:1; margin:0 0 16px; }
 .card-links{ display:flex; gap:16px; }
